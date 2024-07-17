@@ -4,8 +4,8 @@ import * as THREE from 'three'
 
 gsap.registerPlugin(ScrollTrigger)
 
-export const animateWithGsap = (target: string, animationProps: gsap.TweenVars = {}, scrollProps: ScrollTrigger.Vars = {}) => {
-  gsap.to(target, {
+export const animateWithGsap = (target: string, animationProps: gsap.TweenVars = {}, scrollProps: ScrollTrigger.Vars = {}, method: 'from' | 'to' = 'to') => {
+  gsap[method](target, {
     ...animationProps,
     scrollTrigger: {
       trigger: target,

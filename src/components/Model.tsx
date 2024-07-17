@@ -59,7 +59,7 @@ const Model: FC<ModelProps> = () => {
             <ModelView index={1} groupRef={smallGroup} gsapType="view1" controlRef={cameraControllSmall} setRotationState={setSmallRotation} item={model} size={size} />
             <ModelView index={2} groupRef={largeGroup} gsapType="view2" controlRef={cameraControllLarge} setRotationState={setLargeRotation} item={model} size={size} />
 
-            <Canvas className="size-full" style={{ position: 'fixed', top: 0, bottom: 0, left: 0, right: 0, overflow: 'hidden' }} eventSource={eventSource}>
+            <Canvas className="size-full" style={{ position: 'fixed', width: '100%', height: '100%', top: 0, bottom: 0, left: 0, right: 0, overflow: 'hidden' }} eventSource={eventSource}>
               <View.Port />
             </Canvas>
           </div>
