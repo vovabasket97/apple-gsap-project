@@ -3,6 +3,7 @@ import gsap from 'gsap'
 import { FC } from 'react'
 
 import { rightImg, watchImg } from '../utils'
+import { animateWithGsap } from '../utils/animations'
 
 import VideoCarousel from './VideoCarousel'
 
@@ -10,8 +11,8 @@ interface HighlightsProps {}
 
 const Highlights: FC<HighlightsProps> = () => {
   useGSAP(() => {
-    gsap.to('#title', { opacity: 1, y: 0 })
-    gsap.to('.link', { opacity: 1, y: 0, duration: 1, stagger: 0.25 })
+    animateWithGsap('#title', { opacity: 1, y: 0 })
+    animateWithGsap('.link', { opacity: 1, y: 0, duration: 1, stagger: 0.25 })
   }, [])
 
   return (

@@ -9,7 +9,7 @@ import * as THREE from 'three'
 import { OrbitControls as OrbitControlsType } from 'three-stdlib'
 
 import { defaultConfigModel, modelSize, models, sizes } from '../constants'
-import { animateWithGsapTimeline } from '../utils/animations'
+import { animateWithGsap, animateWithGsapTimeline } from '../utils/animations'
 
 import ModelView from './ModelView'
 
@@ -35,7 +35,7 @@ const Model: FC<ModelProps> = () => {
   const [largeRotation, setLargeRotation] = useState(0)
 
   useGSAP(() => {
-    gsap.to('#heading', { y: 0, opacity: 1 })
+    animateWithGsap('#heading', { y: 0, opacity: 1 })
   }, [])
 
   useEffect(() => {
