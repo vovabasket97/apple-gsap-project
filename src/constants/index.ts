@@ -70,4 +70,4 @@ export const footerLinks = ['Privacy Policy', 'Terms of Use', 'Sales Policy', 'L
 
 export const defaultConfigModel = models[0]
 
-export const modelUrl = '/models/scene.glb'
+export const modelUrl = './models/scene.glb'
