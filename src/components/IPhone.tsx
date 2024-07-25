@@ -5,6 +5,9 @@ import * as THREE from 'three'
 
 import { defaultConfigModel, modelSize, modelUrl } from '../constants'
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const getGeometry = (node: any) => node.geometry
+
 const IPhone = (
   props: GroupProps & {
     item: typeof defaultConfigModel
@@ -19,6 +22,8 @@ const IPhone = (
     Object.entries(materials).map((material) => {
       // these are the material names that can't be changed color
       if (material[0] !== 'zFdeDaGNRwzccye' && material[0] !== 'ujsvqBWRMnqdwPx' && material[0] !== 'hUlRcbieVuIiOXG' && material[0] !== 'jlzuBkUzuJqgiAK' && material[0] !== 'xNrofRCqOXXHVZt') {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-expect-error
         material[1].color = new THREE.Color(props.item.color[0])
       }
       material[1].needsUpdate = true
@@ -27,39 +32,39 @@ const IPhone = (
 
   return (
     <group {...props} dispose={null}>
-      <mesh castShadow receiveShadow geometry={nodes.ttmRoLdJipiIOmf.geometry} material={materials.hUlRcbieVuIiOXG} scale={0.01} />
-      <mesh castShadow receiveShadow geometry={nodes.DjsDkGiopeiEJZK.geometry} material={materials.PaletteMaterial001} scale={0.01} />
-      <mesh castShadow receiveShadow geometry={nodes.buRWvyqhBBgcJFo.geometry} material={materials.PaletteMaterial002} scale={0.01} />
-      <mesh castShadow receiveShadow geometry={nodes.MrMmlCAsAxJpYqQ_0.geometry} material={materials.dxCVrUCvYhjVxqy} scale={0.01} />
-      <mesh castShadow receiveShadow geometry={nodes.wqbHSzWaUxBCwxY_0.geometry} material={materials.MHFGNLrDQbTNima} scale={0.01} />
-      <mesh castShadow receiveShadow geometry={nodes.QvGDcbDApaGssma.geometry} material={materials.kUhjpatHUvkBwfM} scale={0.01} />
-      <mesh castShadow receiveShadow geometry={nodes.vFwJFNASGvEHWhs.geometry} material={materials.RJoymvEsaIItifI} scale={0.01} />
-      <mesh castShadow receiveShadow geometry={nodes.evAxFwhaQUwXuua.geometry} material={materials.KSIxMqttXxxmOYl} scale={0.01} />
-      <mesh castShadow receiveShadow geometry={nodes.USxQiqZgxHbRvqB.geometry} material={materials.mcPrzcBUcdqUybC} scale={0.01} />
-      <mesh castShadow receiveShadow geometry={nodes.TvgBVmqNmSrFVfW.geometry} material={materials.pIhYLPqiSQOZTjn} scale={0.01} />
-      <mesh castShadow receiveShadow geometry={nodes.GuYJryuYunhpphO.geometry} material={materials.eShKpuMNVJTRrgg} scale={0.01} />
-      <mesh castShadow receiveShadow geometry={nodes.pvdHknDTGDzVpwc.geometry} material={materials.xdyiJLYTYRfJffH} scale={0.01} />
-      <mesh castShadow receiveShadow geometry={nodes.CfghdUoyzvwzIum.geometry} material={materials.jpGaQNgTtEGkTfo} scale={0.01} />
-      <mesh castShadow receiveShadow geometry={nodes.DjdhycfQYjKMDyn.geometry} material={materials.ujsvqBWRMnqdwPx} scale={0.01} />
-      <mesh castShadow receiveShadow geometry={nodes.usFLmqcyrnltBUr.geometry} material={materials.sxNzrmuTqVeaXdg} scale={0.01} />
-      <mesh castShadow receiveShadow geometry={nodes.xXDHkMplTIDAXLN.geometry} material={materials.pIJKfZsazmcpEiU} scale={0.01}>
+      <mesh castShadow receiveShadow geometry={getGeometry(nodes.ttmRoLdJipiIOmf)} material={materials.hUlRcbieVuIiOXG} scale={0.01} />
+      <mesh castShadow receiveShadow geometry={getGeometry(nodes.DjsDkGiopeiEJZK)} material={materials.PaletteMaterial001} scale={0.01} />
+      <mesh castShadow receiveShadow geometry={getGeometry(nodes.buRWvyqhBBgcJFo)} material={materials.PaletteMaterial002} scale={0.01} />
+      <mesh castShadow receiveShadow geometry={getGeometry(nodes.MrMmlCAsAxJpYqQ_0)} material={materials.dxCVrUCvYhjVxqy} scale={0.01} />
+      <mesh castShadow receiveShadow geometry={getGeometry(nodes.wqbHSzWaUxBCwxY_0)} material={materials.MHFGNLrDQbTNima} scale={0.01} />
+      <mesh castShadow receiveShadow geometry={getGeometry(nodes.QvGDcbDApaGssma)} material={materials.kUhjpatHUvkBwfM} scale={0.01} />
+      <mesh castShadow receiveShadow geometry={getGeometry(nodes.vFwJFNASGvEHWhs)} material={materials.RJoymvEsaIItifI} scale={0.01} />
+      <mesh castShadow receiveShadow geometry={getGeometry(nodes.evAxFwhaQUwXuua)} material={materials.KSIxMqttXxxmOYl} scale={0.01} />
+      <mesh castShadow receiveShadow geometry={getGeometry(nodes.USxQiqZgxHbRvqB)} material={materials.mcPrzcBUcdqUybC} scale={0.01} />
+      <mesh castShadow receiveShadow geometry={getGeometry(nodes.TvgBVmqNmSrFVfW)} material={materials.pIhYLPqiSQOZTjn} scale={0.01} />
+      <mesh castShadow receiveShadow geometry={getGeometry(nodes.GuYJryuYunhpphO)} material={materials.eShKpuMNVJTRrgg} scale={0.01} />
+      <mesh castShadow receiveShadow geometry={getGeometry(nodes.pvdHknDTGDzVpwc)} material={materials.xdyiJLYTYRfJffH} scale={0.01} />
+      <mesh castShadow receiveShadow geometry={getGeometry(nodes.CfghdUoyzvwzIum)} material={materials.jpGaQNgTtEGkTfo} scale={0.01} />
+      <mesh castShadow receiveShadow geometry={getGeometry(nodes.DjdhycfQYjKMDyn)} material={materials.ujsvqBWRMnqdwPx} scale={0.01} />
+      <mesh castShadow receiveShadow geometry={getGeometry(nodes.usFLmqcyrnltBUr)} material={materials.sxNzrmuTqVeaXdg} scale={0.01} />
+      <mesh castShadow receiveShadow geometry={getGeometry(nodes.xXDHkMplTIDAXLN)} material={materials.pIJKfZsazmcpEiU} scale={0.01}>
         <meshStandardMaterial roughness={1} map={texture} />
       </mesh>
-      <mesh castShadow receiveShadow geometry={nodes.vELORlCJixqPHsZ.geometry} material={materials.zFdeDaGNRwzccye} scale={0.01} />
-      <mesh castShadow receiveShadow geometry={nodes.EbQGKrWAqhBHiMv.geometry} material={materials.TBLSREBUyLMVtJa} scale={0.01} />
-      <mesh castShadow receiveShadow geometry={nodes.EddVrWkqZTlvmci.geometry} material={materials.xNrofRCqOXXHVZt} scale={0.01} />
-      <mesh castShadow receiveShadow geometry={nodes.KSWlaxBcnPDpFCs.geometry} material={materials.yQQySPTfbEJufve} scale={0.01} />
-      <mesh castShadow receiveShadow geometry={nodes.TakBsdEjEytCAMK.geometry} material={materials.PaletteMaterial003} scale={0.01} />
-      <mesh castShadow receiveShadow geometry={nodes.IykfmVvLplTsTEW.geometry} material={materials.PaletteMaterial004} scale={0.01} />
-      <mesh castShadow receiveShadow geometry={nodes.wLfSXtbwRlBrwof.geometry} material={materials.oZRkkORNzkufnGD} scale={0.01} />
-      <mesh castShadow receiveShadow geometry={nodes.WJwwVjsahIXbJpU.geometry} material={materials.yhcAXNGcJWCqtIS} scale={0.01} />
-      <mesh castShadow receiveShadow geometry={nodes.YfrJNXgMvGOAfzz.geometry} material={materials.bCgzXjHOanGdTFV} scale={0.01} />
-      <mesh castShadow receiveShadow geometry={nodes.DCLCbjzqejuvsqH.geometry} material={materials.vhaEJjZoqGtyLdo} scale={0.01} />
-      <mesh castShadow receiveShadow geometry={nodes.CdalkzDVnwgdEhS.geometry} material={materials.jlzuBkUzuJqgiAK} scale={0.01} />
-      <mesh castShadow receiveShadow geometry={nodes.NtjcIgolNGgYlCg.geometry} material={materials.PpwUTnTFZJXxCoE} scale={0.01} />
-      <mesh castShadow receiveShadow geometry={nodes.pXBNoLiaMwsDHRF.geometry} material={materials.yiDkEwDSyEhavuP} scale={0.01} />
-      <mesh castShadow receiveShadow geometry={nodes.IkoiNqATMVoZFKD.geometry} material={materials.hiVunnLeAHkwGEo} scale={0.01} />
-      <mesh castShadow receiveShadow geometry={nodes.rqgRAGHOwnuBypi.geometry} material={materials.HGhEhpqSBZRnjHC} scale={0.01} />
+      <mesh castShadow receiveShadow geometry={getGeometry(nodes.vELORlCJixqPHsZ)} material={materials.zFdeDaGNRwzccye} scale={0.01} />
+      <mesh castShadow receiveShadow geometry={getGeometry(nodes.EbQGKrWAqhBHiMv)} material={materials.TBLSREBUyLMVtJa} scale={0.01} />
+      <mesh castShadow receiveShadow geometry={getGeometry(nodes.EddVrWkqZTlvmci)} material={materials.xNrofRCqOXXHVZt} scale={0.01} />
+      <mesh castShadow receiveShadow geometry={getGeometry(nodes.KSWlaxBcnPDpFCs)} material={materials.yQQySPTfbEJufve} scale={0.01} />
+      <mesh castShadow receiveShadow geometry={getGeometry(nodes.TakBsdEjEytCAMK)} material={materials.PaletteMaterial003} scale={0.01} />
+      <mesh castShadow receiveShadow geometry={getGeometry(nodes.IykfmVvLplTsTEW)} material={materials.PaletteMaterial004} scale={0.01} />
+      <mesh castShadow receiveShadow geometry={getGeometry(nodes.wLfSXtbwRlBrwof)} material={materials.oZRkkORNzkufnGD} scale={0.01} />
+      <mesh castShadow receiveShadow geometry={getGeometry(nodes.WJwwVjsahIXbJpU)} material={materials.yhcAXNGcJWCqtIS} scale={0.01} />
+      <mesh castShadow receiveShadow geometry={getGeometry(nodes.YfrJNXgMvGOAfzz)} material={materials.bCgzXjHOanGdTFV} scale={0.01} />
+      <mesh castShadow receiveShadow geometry={getGeometry(nodes.DCLCbjzqejuvsqH)} material={materials.vhaEJjZoqGtyLdo} scale={0.01} />
+      <mesh castShadow receiveShadow geometry={getGeometry(nodes.CdalkzDVnwgdEhS)} material={materials.jlzuBkUzuJqgiAK} scale={0.01} />
+      <mesh castShadow receiveShadow geometry={getGeometry(nodes.NtjcIgolNGgYlCg)} material={materials.PpwUTnTFZJXxCoE} scale={0.01} />
+      <mesh castShadow receiveShadow geometry={getGeometry(nodes.pXBNoLiaMwsDHRF)} material={materials.yiDkEwDSyEhavuP} scale={0.01} />
+      <mesh castShadow receiveShadow geometry={getGeometry(nodes.IkoiNqATMVoZFKD)} material={materials.hiVunnLeAHkwGEo} scale={0.01} />
+      <mesh castShadow receiveShadow geometry={getGeometry(nodes.rqgRAGHOwnuBypi)} material={materials.HGhEhpqSBZRnjHC} scale={0.01} />
     </group>
   )
 }
