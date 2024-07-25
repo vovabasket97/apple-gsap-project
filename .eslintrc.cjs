@@ -12,6 +12,6 @@ module.exports = {
     'import/no-absolute-path': 'off',
     'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
     '@typescript-eslint/no-unused-vars': 'off',
-    'array-callback-return': 'off'
+    'array-callback-return': 'off',
   },
 }
